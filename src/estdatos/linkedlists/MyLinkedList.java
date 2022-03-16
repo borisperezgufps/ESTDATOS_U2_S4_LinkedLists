@@ -111,6 +111,12 @@ public class MyLinkedList<E> {
 		
 	}
 	
+	// *************************************
+	// METODOS PARA IMPLEMENTAR POR LOS
+	// ESTUDIANTES
+	// *************************************
+	
+	
 	/**
 	 * 
 	 * @param element
@@ -120,12 +126,39 @@ public class MyLinkedList<E> {
 		
 	}
 	
+	/**
+	 * 
+	 * @param pos
+	 * @return
+	 */
 	public E remove(int pos) {
 	
 		
 		return null;
 	}
 	
+	/**
+	 * 
+	 */
+	public void clear() {
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isEmpty() {
+		return false;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public Node<E> getFirst(){
+		return null;
+	}
 	
 
 }
