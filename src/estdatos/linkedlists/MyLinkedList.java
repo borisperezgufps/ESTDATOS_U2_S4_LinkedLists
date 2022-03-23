@@ -160,6 +160,14 @@ public class MyLinkedList<E> {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param n1
+	 * @param n2
+	 */
+	public void exchangeNodes(Node<E> n1, Node<E> n2) {
+		
+	}
 
 }
 
