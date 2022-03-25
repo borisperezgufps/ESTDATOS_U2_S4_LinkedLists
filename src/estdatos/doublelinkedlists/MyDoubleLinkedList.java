@@ -144,6 +144,30 @@ public class MyDoubleLinkedList<E> {
 	}
 	
 	/**
+	 * Busca dentro de la lista en busca del elemento pasado
+	 * por parámetro
+	 * @param element Elemento a buscar en la lista
+	 * @return True/False dependiendo de si lo encuentra
+	 */
+	public boolean find(E element) {
+		
+		Node<E> current = head;
+		
+		do {
+		
+			if(current.getData().equals(element)) {
+				return true;
+			}else {
+				current = current.getNext();
+			}
+				
+		}while(current!=null);
+		
+		
+		return false;
+	}
+	
+	/**
 	 * Imprime la lista en el sentido inverso, iniciando
 	 * por la cabeza.
 	 */
@@ -155,21 +179,23 @@ public class MyDoubleLinkedList<E> {
 		
 		// Imprime el tipo de dato del nodo luego de la 
 		// instanciación genérica.
-		System.out.println(head.getData().getClass().getTypeName()) ;
+//		System.out.println(head.getData().getClass().getTypeName()) ;
 		
-		StringBuffer sb = new StringBuffer("[");
+//		StringBuffer sb = new StringBuffer("[");
 		
 		Node<E> current = head;
 		for(int i=0;i<size;i++) {
-			sb.append(current.getData());
+			System.out.println(current.getData());
+			
+			
 			current = current.getNext();
-			if(current != null)
-				sb.append(", ");
-			else
-				sb.append("]");
+//			if(current != null)
+//				sb.append(", ");
+//			else
+//				sb.append("]");
 		}
 		
-		System.out.println(sb.toString());
+//		System.out.println(sb.toString());
 		
 		
 		

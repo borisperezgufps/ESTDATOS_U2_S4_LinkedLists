@@ -26,7 +26,7 @@ public class MyCircularLinkedList<E> {
 		Node<E> current = head;
 		
 		// Recorro la lista moviendo el apuntador
-		while(current.getNext()!=null) {
+		while(current.getNext()!=head && size>1) {
 			current = current.getNext();
 		}
 		
@@ -65,7 +65,7 @@ public class MyCircularLinkedList<E> {
 		
 			Node<E> previous = head;
 			
-			while(previous.getNext()!=null) {
+			while(previous.getNext()!=head) {
 					
 				Node<E> toFind = previous.getNext();
 				
@@ -144,13 +144,7 @@ public class MyCircularLinkedList<E> {
 		
 	}
 	
-	/**
-	 * Imprime la lista en el sentido inverso, iniciando
-	 * por la cabeza.
-	 */
-	public void printReverse() {
-		
-	}
+	
 	
 	public void print(int times) {
 		
