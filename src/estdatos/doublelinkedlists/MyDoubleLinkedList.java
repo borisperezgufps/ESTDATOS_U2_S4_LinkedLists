@@ -154,8 +154,9 @@ public class MyDoubleLinkedList<E> {
 		Node<E> current = head;
 		
 		do {
-		
-			if(current.getData().equals(element)) {
+			E ele = current.getData();
+			
+			if(ele.equals(element)) {
 				return true;
 			}else {
 				current = current.getNext();
