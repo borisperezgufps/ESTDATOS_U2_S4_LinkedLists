@@ -155,10 +155,18 @@ public class MyCircularLinkedList<E> {
 		StringBuffer sb = new StringBuffer("[");
 		
 		Node<E> current = head;
+		sb.append(current.getData());
+		current = current.getNext();
+		if(current != null)
+			sb.append(", ");
+		else
+			sb.append("]");
+		
+		
 		for(int i=0;i<times;i++) {
 			sb.append(current.getData());
 			current = current.getNext();
-			if(current != null)
+			if(current != head)
 				sb.append(", ");
 			else
 				sb.append("]");

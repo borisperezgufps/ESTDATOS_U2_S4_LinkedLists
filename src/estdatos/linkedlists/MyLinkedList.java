@@ -8,6 +8,15 @@ public class MyLinkedList<E> {
 	private Node<E> head;
 	private int size = 0; // Number of elements in the list
 
+	public int getSize() {
+		return size;
+	}
+	
+	public E get(int pos) {
+		
+		return null;
+	}
+	
 	/**
 	 * Agrega un elemento de tipo E a la lista
 	 * @param e
@@ -131,17 +140,53 @@ public class MyLinkedList<E> {
 	 * @param pos
 	 * @return
 	 */
-	public E remove(int pos) {
+	public E remove(int pos) throws Exception {
 	
+		Node<E> p = head;
 		
-		return null;
+		if(pos>=size) {
+			throw new Exception("Esa posición no existe");
+		}else if(pos==0) {
+			
+			head = p.getNext();
+			p.setNext(null);
+			size--;
+			
+		}else {
+		
+			int cont = 0;
+			
+			while(cont!=pos) {		
+				p = p.getNext();
+				cont++;
+			}
+			
+			// Se sale del while, porque tal vez el contador se igualo
+			// a la posición buscada.
+			
+			int contAnterior = 0;
+			Node<E> q = head;
+			
+			while(contAnterior<pos-1) {
+				q = q.getNext();
+				contAnterior++;
+			}
+			// Se sale del while cuando llegue antes de P
+			
+			q.setNext(p.getNext());
+			p.setNext(null);
+			size--;
+		}
+		
+		return p.getData();
 	}
 	
 	/**
 	 * 
 	 */
 	public void clear() {
-		
+		size = 0;
+		head = null;
 	}
 	
 	/**
@@ -149,6 +194,10 @@ public class MyLinkedList<E> {
 	 * @return
 	 */
 	public boolean isEmpty() {
+		
+		if(head==null && size==0)
+			return true;
+		
 		return false;
 	}
 	
@@ -156,7 +205,10 @@ public class MyLinkedList<E> {
 	 * 
 	 * @return
 	 */
-	public Node<E> getFirst(){
+	public E getFirst(){
+		if(!isEmpty())
+			return head.getData();
+		
 		return null;
 	}
 	
@@ -165,7 +217,7 @@ public class MyLinkedList<E> {
 	 * @param n1
 	 * @param n2
 	 */
-	public void exchangeNodes(Node<E> n1, Node<E> n2) {
+	public void exchangeNodes(E dataNodeToFind, E dataNodeToInsert) {
 		
 	}
 
