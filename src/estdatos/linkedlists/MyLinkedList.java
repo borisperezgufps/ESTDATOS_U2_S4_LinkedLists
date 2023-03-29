@@ -8,6 +8,47 @@ public class MyLinkedList<E> {
 	private Node<E> head;
 	private int size = 0; // Number of elements in the list
 
+	public void imprimirMayores(E valor) {
+		// Recorre cada nodo
+		
+		Node<E> p = head;
+		
+		while(p!=null) {
+			
+			if(valor instanceof String) {
+				
+				String valorNodo = (String)p.getData();
+				
+				if(valorNodo.compareTo((String)valor)>0) {
+					System.out.println(valorNodo + " - ");
+				}
+				
+			}else if(valor instanceof Integer) {
+				
+				int eValor = (Integer)valor;
+				int eNodo = (Integer)p.getData();
+				
+				if(eNodo>eValor) {
+					System.out.println(eNodo + " - ");
+				}
+			
+			}else{
+				
+				Comparable c = (Comparable)p.getData();
+				
+				if(c.compareTo((Comparable)valor)>0) {
+					System.out.println(p.getData() + " - ");
+				}
+				
+			
+			}
+			
+			p = p.getNext();
+			
+		}
+		
+	}
+	
 	public int getSize() {
 		return size;
 	}
@@ -16,7 +57,8 @@ public class MyLinkedList<E> {
 	 * Agrega un elemento de tipo E a la lista
 	 * @param e
 	 */
-	public void add(E element) {
+	public void add(E element){
+		
 		if(head==null) {
 			// Si la lista está vacía, la cabeza será el nodo que se creará
 			head = new Node<E>(element); 
@@ -121,7 +163,8 @@ public class MyLinkedList<E> {
 	// *************************************
 	
 	
-	public E get(int pos) {
+	public E get(int pos){
+		
 		
 		return null;
 	}
@@ -141,8 +184,14 @@ public class MyLinkedList<E> {
 	 * @param pos
 	 * @return
 	 */
-	public E remove(int pos) throws Exception {
+	public E remove(int pos) throws Exception{
 	
+		int[] arreglo = new int[3];
+		arreglo[6] = 4;
+		
+		
+		if(pos>=size)
+			throw new Exception("La posición no puede ser mayor a "+size);
 		
 		return null;
 	}
@@ -171,11 +220,13 @@ public class MyLinkedList<E> {
 	 * 
 	 * @return
 	 */
-	public E getFirst(){
+	public E getFirst() throws Exception{
 		if(!isEmpty())
 			return head.getData();
 		
-		return null;
+		throw new Exception("La lista está vacía");
+		
+	
 	}
 	
 	/**

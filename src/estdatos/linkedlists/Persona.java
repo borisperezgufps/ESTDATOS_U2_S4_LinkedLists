@@ -1,6 +1,7 @@
 package estdatos.linkedlists;
 
 public class Persona implements Comparable<Persona> {
+	
 	private int edad;
 	private String nombre;
 	private int anioNacimiento;
@@ -11,6 +12,9 @@ public class Persona implements Comparable<Persona> {
 		this.edad = edad;
 		this.nombre = nombre;
 		this.anioNacimiento = anioNacimiento;
+	}
+	public Persona(int i) {
+		edad = i;
 	}
 	public int getEdad() {
 		return edad;
@@ -30,6 +34,7 @@ public class Persona implements Comparable<Persona> {
 	public void setAnioNacimiento(int anioNacimiento) {
 		this.anioNacimiento = anioNacimiento;
 	}
+	
 	@Override
 	public int compareTo(Persona o) {
 		
@@ -38,8 +43,19 @@ public class Persona implements Comparable<Persona> {
 		else if(this.getEdad()<o.getEdad())
 			return -1;
 		
+		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	@Override
+	public String toString() {
+		String valor = this.getNombre() + 
+				" (" + this.getEdad() + "): " + 
+				this.anioNacimiento;
+		return valor;
+	}
+	
+	
 	
 	
 }

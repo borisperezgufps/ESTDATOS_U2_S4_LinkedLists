@@ -1,6 +1,6 @@
 package estdatos.linkedlists;
 
-public class Node<E> {
+public class Node<E> implements Comparable<Node<E>>{
 
 	private E data; 
 	private Node<E> next;
@@ -19,6 +19,12 @@ public class Node<E> {
 	
 	public E getData() {
 		return data;
+	}
+
+	@Override
+	public int compareTo(Node<E> o) {
+		
+		return 0;
 	}
 
 	
